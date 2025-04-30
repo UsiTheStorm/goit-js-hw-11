@@ -15,7 +15,7 @@ export default function getImagesByQuery(query) {
                 orientation: 'horizontal',
             },
         })
-        .then(({ data }) => data)
+        .then((response) => response.data.hits)
         .catch((error) => {
             console.error('❌ Failed to fetch images:', error.message);
             throw error;
