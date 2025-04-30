@@ -4,6 +4,12 @@ import 'glightbox/dist/css/glightbox.css';
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
 
+const glightboxOptions = {
+    selector: '.glightbox', // CSS selector for the gallery links
+    loop: true, // Enable looping through the gallery items
+    openEffect: 'zoom', // Effect to use when opening the lightbox
+};
+
 // Create alt text from tags
 function createAltTextFromTags(tags) {
     if (!tags) {
@@ -40,17 +46,7 @@ export function createGallery(imagesArray) {
     }
     const markup = imagesArray.map(createGalleryItem).join('');
     gallery.insertAdjacentHTML('beforeend', markup);
+    GLightbox(glightboxOptions);
 }
 
 export function clearGallery() {}
-
-// Initialize GLightbox with configuration options
-// eslint-disable-next-line no-unused-vars
-const lightbox = GLightbox({
-    // CSS selector for the gallery links
-    selector: '.glightbox',
-    // Enable looping through the gallery items
-    loop: true,
-    // Effect to use when opening the lightbox
-    openEffect: 'zoom',
-});
