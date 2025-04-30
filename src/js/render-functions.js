@@ -52,3 +52,12 @@ export function createGallery(imagesArray) {
 export function clearGallery() {
     gallery.innerHTML = '';
 }
+
+// Show/hide loader
+export function showLoader() {
+    loader.classList.add('is-hidden');
+}
+
+export function hideLoader() {
+    loader.classList.remove('is-hidden');
+}
