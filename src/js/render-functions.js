@@ -48,4 +48,7 @@ export function createGallery(imagesArray) {
     GLightbox(glightboxOptions);
 }
 
-export function clearGallery() {}
+// Clear gallery
+export function clearGallery() {
+    gallery.innerHTML = '';
+}
