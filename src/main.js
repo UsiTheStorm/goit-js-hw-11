@@ -1,5 +1,6 @@
 import { showErrorToast, showWarningToast } from './js/utilitis/toasts';
 import getImagesByQuery from './js/pixbay-api';
+import { createGallery } from './js/render-functions';
 
 const form = document.querySelector('.form');
 
@@ -15,4 +16,6 @@ form.addEventListener('submit', (event) => {
     }
 });
 
-getImagesByQuery('Dog');
+getImagesByQuery('Dog').then((images) => {
+    createGallery(images);
+});
