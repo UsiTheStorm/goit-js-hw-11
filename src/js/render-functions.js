@@ -18,6 +18,7 @@ function createAltTextFromTags(tags) {
     return tags
         .split(',')
         .map((tag) => tag.trim())
+        .filter((tag) => tag.length > 0)
         .slice(0, 3)
         .join(',');
 }
@@ -55,9 +56,9 @@ export function clearGallery() {
 
 // Show/hide loader
 export function showLoader() {
-    loader.classList.add('is-hidden');
+    loader.classList.remove('is-hidden');
 }
 
 export function hideLoader() {
-    loader.classList.remove('is-hidden');
+    loader.classList.add('is-hidden');
 }
