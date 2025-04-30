@@ -39,7 +39,6 @@ function createGalleryItem({ largeImageURL: original, webformatURL: preview, tag
 }
 // Create gallery
 export function createGallery(imagesArray) {
-    // console.log(imagesArray);
     if (!gallery) {
         console.error('Gallery element not found in the DOM.');
         return;
