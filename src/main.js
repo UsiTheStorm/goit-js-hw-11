@@ -1,4 +1,5 @@
-import { showErrorToast } from './js/utilitis/toasts';
+import { showErrorToast, showWarningToast } from './js/utilitis/toasts';
+import getImagesByQuery from './js/pixbay-api';
 
 const form = document.querySelector('.form');
 
@@ -13,3 +14,5 @@ form.addEventListener('submit', (event) => {
         return undefined;
     }
 });
+
+getImagesByQuery('Dog');
