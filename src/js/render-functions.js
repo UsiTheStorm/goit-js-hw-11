@@ -6,7 +6,14 @@ const loader = document.querySelector('.loader');
 
 // Create alt text from tags
 function createAltTextFromTags(tags) {
-    return tags.split(',').slice(0, 3).join(',');
+    if (!tags) {
+        return 'Gallery image';
+    }
+    return tags
+        .split(',')
+        .map((tag) => tag.trim())
+        .slice(0, 3)
+        .join(',');
 }
 
 // Create item of gallery
