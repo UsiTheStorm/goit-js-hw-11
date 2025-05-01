@@ -10,6 +10,7 @@
 @import url('./container.css');
 @import url('./animations.css');
 @import url('./izitoast.css');
+@import url('./loader.css');
 
 /* Sections style */
 @import url('./gallery.css');
