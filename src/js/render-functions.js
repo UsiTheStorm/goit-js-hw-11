@@ -3,6 +3,7 @@ import 'glightbox/dist/css/glightbox.css';
 
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
+const submitBtn = document.querySelector('button[type="submit"]');
 
 const glightboxOptions = {
     selector: '.glightbox', // CSS selector for the gallery links
@@ -22,7 +23,7 @@ function createAltTextFromTags(tags) {
         .slice(0, 3)
         .join(',');
 }
-
+// Format number
 function formatNumberShort(number) {
     const num = Number(number);
     if (Number.isNaN(num)) {
@@ -35,6 +36,17 @@ function formatNumberShort(number) {
         return `${Math.floor(num / 1000)}K`;
     }
     return String(num);
+}
+
+// Set button loading
+export function setBtnLoading(isLoading) {
+    if (isLoading) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Loading';
+    } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Search';
+    }
 }
 
 // Create item of gallery

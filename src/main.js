@@ -1,6 +1,12 @@
 import { showErrorToast, showWarningToast } from './js/utilitis/toasts';
 import getImagesByQuery from './js/pixbay-api';
-import { createGallery, clearGallery, showLoader, hideLoader } from './js/render-functions';
+import {
+    createGallery,
+    clearGallery,
+    showLoader,
+    hideLoader,
+    setBtnLoading,
+} from './js/render-functions';
 
 const form = document.querySelector('.form');
 
@@ -16,6 +22,8 @@ form.addEventListener('submit', (event) => {
     }
 
     event.target.reset();
+
+    setBtnLoading(true);
     clearGallery();
     showLoader();
 
@@ -25,7 +33,6 @@ form.addEventListener('submit', (event) => {
                 showWarningToast('No images found for the search query.');
                 return undefined;
             }
-
             hideLoader();
             createGallery(images);
 
@@ -37,6 +44,7 @@ form.addEventListener('submit', (event) => {
             return undefined;
         })
         .finally(() => {
+            setBtnLoading(false);
             hideLoader();
         });
 });

@@ -26,6 +26,7 @@
 }
 
 .form button {
+  width: 100px;
   padding: 12px 20px;
   background-color: rgba(18, 157, 175, 0.879);
   color: rgb(255, 255, 255);
@@ -38,4 +39,11 @@
 
 .form button:hover {
   background-color: #0d5670;
+}
+
+.form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #999;
+  color: white;
 }
