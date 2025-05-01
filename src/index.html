@@ -9,7 +9,7 @@
   </head>
   <body>
     <main>
-      <h1>Search images</h1>
+      <h1 class="title">Search images</h1>
 
       <form class="form">
         <label>
@@ -17,8 +17,11 @@
         </label>
         <button type="submit">Search</button>
       </form>
-      <span class="loader is-hidden"></span>
-      <ul class="gallery"></ul>
+
+      <div class="gallery-container">
+        <span class="loader is-hidden"></span>
+        <ul class="gallery"></ul>
+      </div>
     </main>
 
     <script type="module" src="./main.js"></script>
