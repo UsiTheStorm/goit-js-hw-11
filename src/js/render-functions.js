@@ -11,6 +11,15 @@ const glightboxOptions = {
     openEffect: 'zoom', // Effect to use when opening the lightbox
 };
 
+// Validate element
+function validateElement(element, name) {
+    if (!element) {
+        console.error(`${name} element not found in the DOM.`);
+        return false;
+    }
+    return true;
+}
+
 // Create alt text from tags
 function createAltTextFromTags(tags) {
     if (!tags) {
@@ -92,10 +101,7 @@ function createGalleryItem({
 }
 // Create gallery
 export function createGallery(imagesArray) {
-    if (!gallery) {
-        console.error('Gallery element not found in the DOM.');
-        return;
-    }
+    if (!validateElement(gallery, 'Gallery')) return;
     const markup = imagesArray.map(createGalleryItem).join('');
     gallery.insertAdjacentHTML('beforeend', markup);
     GLightbox(glightboxOptions);
@@ -108,17 +114,11 @@ export function clearGallery() {
 
 // Show/hide loader
 export function showLoader() {
-    if (!loader) {
-        console.error('Loader element not found in the DOM.');
-        return;
-    }
+    if (!validateElement(loader, 'Loader')) return;
     loader.classList.remove('is-hidden');
 }
 
 export function hideLoader() {
-    if (!loader) {
-        console.error('Loader element not found in the DOM.');
-        return;
-    }
+    if (!validateElement(loader, 'Loader')) return;
     loader.classList.add('is-hidden');
 }
