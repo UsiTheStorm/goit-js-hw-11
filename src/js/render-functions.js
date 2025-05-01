@@ -24,7 +24,15 @@ function createAltTextFromTags(tags) {
 }
 
 // Create item of gallery
-function createGalleryItem({ largeImageURL: original, webformatURL: preview, tags }) {
+function createGalleryItem({
+    largeImageURL: original,
+    webformatURL: preview,
+    tags,
+    likes,
+    views,
+    comments,
+    downloads,
+}) {
     const altText = createAltTextFromTags(tags);
 
     return /* html */ `<li class="gallery__item">
@@ -35,6 +43,24 @@ function createGalleryItem({ largeImageURL: original, webformatURL: preview, tag
           alt="${altText}"
           loading="lazy"
       />
+      <div class="info">
+          <span class="info-item">
+              <b>Likes</b>
+              ${likes}
+          </span>
+          <span class="info-item">
+              <b>Views</b>
+              ${views}
+          </span>
+          <span class="info-item">
+              <b>Comments</b>
+              ${comments}
+          </span>
+          <span class="info-item">
+              <b>Downloads</b>
+              ${downloads}
+          </span>
+      </div>
   </a>
   </li>`;
 }
