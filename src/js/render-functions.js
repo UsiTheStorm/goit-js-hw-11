@@ -23,6 +23,20 @@ function createAltTextFromTags(tags) {
         .join(',');
 }
 
+function formatNumberShort(number) {
+    const num = Number(number);
+    if (Number.isNaN(num)) {
+        return 'N/A';
+    }
+    if (num >= 1000000) {
+        return `${Math.floor(num / 1000000)}M`;
+    }
+    if (num >= 1000) {
+        return `${Math.floor(num / 1000)}K`;
+    }
+    return String(num);
+}
+
 // Create item of gallery
 function createGalleryItem({
     largeImageURL: original,
@@ -46,19 +60,19 @@ function createGalleryItem({
       <div class="info">
           <span class="info-item">
               <b>Likes</b>
-              ${likes}
+              ${formatNumberShort(likes)}
           </span>
           <span class="info-item">
               <b>Views</b>
-              ${views}
+              ${formatNumberShort(views)}
           </span>
           <span class="info-item">
               <b>Comments</b>
-              ${comments}
+              ${formatNumberShort(comments)}
           </span>
           <span class="info-item">
               <b>Downloads</b>
-              ${downloads}
+              ${formatNumberShort(downloads)}
           </span>
       </div>
   </a>
