@@ -5,7 +5,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 export const showSuccessToast = (message) => {
     iziToast.success({
         title: '✅',
-        // backgroundColor: '#a6a2e4',
+        // backgroundColor: '#a2d1e4',
         message,
         position: 'bottomRight',
         transitionIn: 'bounceInRight',
@@ -37,7 +37,7 @@ export const showWarningToast = (message) => {
     iziToast.warning({
         title: '',
         message,
-        backgroundColor: '#a6a2e4',
+        backgroundColor: '#a2dbe4',
         position: 'bottomRight',
         transitionIn: 'bounceInRight',
         transitionOut: 'fadeOut',
