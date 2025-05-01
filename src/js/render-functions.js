@@ -59,19 +59,19 @@ function createGalleryItem({
       />
       <div class="info">
           <span class="info-item">
-              <b>Likes</b>
+          <img src="./img/icons/like.svg" width="16" alt="Like icon">
               ${formatNumberShort(likes)}
           </span>
           <span class="info-item">
-              <b>Views</b>
+          <img src="./img/icons/view.svg" width="16" alt="View icon">
               ${formatNumberShort(views)}
           </span>
           <span class="info-item">
-              <b>Comments</b>
+          <img src="./img/icons/comment.svg" width="16" alt="Comment icon">
               ${formatNumberShort(comments)}
           </span>
           <span class="info-item">
-              <b>Downloads</b>
+          <img src="./img/icons/download.svg" width="16" alt="Download icon">
               ${formatNumberShort(downloads)}
           </span>
       </div>
