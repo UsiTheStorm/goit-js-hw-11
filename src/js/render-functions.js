@@ -100,7 +100,7 @@ export function showLoader() {
         console.error('Loader element not found in the DOM.');
         return;
     }
-    loader.classList.add('is-hidden');
+    loader.classList.remove('is-hidden');
 }
 
 export function hideLoader() {
