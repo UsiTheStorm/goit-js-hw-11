@@ -80,19 +80,19 @@ function createGalleryItem({
       />
       <div class="info">
           <span class="info-item">
-          <img src="./img/icons/like.svg" width="16" alt="Like icon">
+          <img src="img/like.svg" width="16" height="16" alt="Like icon">
               ${formatNumberShort(likes)}
           </span>
           <span class="info-item">
-          <img src="./img/icons/view.svg" width="16" alt="View icon">
+          <img src="img/icons/view.svg" width="16" alt="View icon">
               ${formatNumberShort(views)}
           </span>
           <span class="info-item">
-          <img src="./img/icons/comment.svg" width="16" alt="Comment icon">
+          <img src="img/icons/comment.svg" width="16" alt="Comment icon">
               ${formatNumberShort(comments)}
           </span>
           <span class="info-item">
-          <img src="./img/icons/download.svg" width="16" alt="Download icon">
+          <img src="img/icons/download.svg" width="16" alt="Download icon">
               ${formatNumberShort(downloads)}
           </span>
       </div>
