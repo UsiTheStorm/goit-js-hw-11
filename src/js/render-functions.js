@@ -35,10 +35,10 @@ function createGalleryItem({
 }) {
     const altText = createAltTextFromTags(tags);
 
-    return /* html */ `<li class="gallery__item">
-  <a class="gallery__link glightbox" href="${original}">
+    return /* html */ `<li class="gallery-item">
+  <a class="gallery-link glightbox" href="${original}">
       <img
-          class="gallery__image"
+          class="gallery-image"
           src="${preview}" 
           alt="${altText}"
           loading="lazy"
