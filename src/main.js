@@ -8,14 +8,39 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formData = new FormData(form);
-    const searchQuery = formData.get('search-text');
+    const searchQuery = formData.get('search-text').trim();
 
     if (!searchQuery) {
-        showErrorToast('Please enter a search query.');
+        showWarningToast('Please enter a search query.');
         return undefined;
     }
+
+    event.target.reset();
+    clearGallery();
+    showLoader();
+
+    getImagesByQuery(searchQuery)
+        .then((images) => {
+            if (!images.length) {
+                showWarningToast('No images found for the search query.');
+                return undefined;
+            }
+
+            hideLoader();
+            createGallery(images);
+
+            return undefined;
+        })
+        .catch((error) => {
+            showErrorToast('An error occurred while fetching images.');
+            console.error('Error fetching images:', error);
+            return undefined;
+        })
+        .finally(() => {
+            hideLoader();
+        });
 });
 
-getImagesByQuery('Dog').then((images) => {
-    createGallery(images);
-});
+// getImagesByQuery('Dog').then((images) => {
+//     createGallery(images);
+// });
