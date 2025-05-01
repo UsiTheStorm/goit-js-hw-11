@@ -18,7 +18,7 @@ form.addEventListener('submit', (event) => {
 
     if (!searchQuery) {
         showWarningToast('Please enter a search query.');
-        return undefined;
+        return;
     }
 
     event.target.reset();
@@ -31,17 +31,14 @@ form.addEventListener('submit', (event) => {
         .then((images) => {
             if (!images.length) {
                 showWarningToast('No images found for the search query.');
-                return undefined;
+                return;
             }
             hideLoader();
             createGallery(images);
-
-            return undefined;
         })
         .catch((error) => {
             showErrorToast('An error occurred while fetching images.');
             console.error('Error fetching images:', error);
-            return undefined;
         })
         .finally(() => {
             setBtnLoading(false);
