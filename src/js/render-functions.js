@@ -80,7 +80,7 @@ function createGalleryItem({
       />
       <div class="info">
           <span class="info-item">
-          <img src="icons/like.svg" width="16" height="16" alt="Like icon">
+          <img src="icons/like.svg" width="16" alt="Like icon">
               ${formatNumberShort(likes)}
           </span>
           <span class="info-item">
@@ -103,11 +103,6 @@ function createGalleryItem({
 export function createGallery(imagesArray) {
     if (!validateElement(gallery, 'Gallery')) return;
     const markup = imagesArray.map(createGalleryItem).join('');
-    // це тестова картинка, її не видно також
-    // gallery.insertAdjacentHTML(
-    //     'afterbegin',
-    //     '<div><img src="./img/icons/hq720.jpg" alt="cat" width="400" /></div>',
-    // );
     gallery.insertAdjacentHTML('beforeend', markup);
     GLightbox(glightboxOptions);
 }
