@@ -13,6 +13,7 @@ export default function getImagesByQuery(query) {
                 q: query,
                 image_type: 'photo',
                 orientation: 'horizontal',
+                per_page: 50,
             },
         })
         .then((response) => response.data.hits)
