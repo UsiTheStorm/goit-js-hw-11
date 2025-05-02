@@ -81,3 +81,9 @@
 
   color: rgb(108, 108, 108);
 }
+
+@media (max-width: 600px) {
+  .gallery-container {
+    padding: 0 10px;
+  }
+}
