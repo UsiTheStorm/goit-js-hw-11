@@ -8,7 +8,7 @@ import{i as p,a as b,G as L}from"./assets/vendor-DqsV4Fdp.js";(function(){const 
       />
       <div class="info">
           <span class="info-item">
-          <img src="icons/like.svg" width="16" height="16" alt="Like icon">
+          <img src="icons/like.svg" width="16" alt="Like icon">
               ${c(n)}
           </span>
           <span class="info-item">
